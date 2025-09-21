@@ -7,8 +7,8 @@ import Downloadbutton from "./Downloadbutton";
 function LeftMenu() {
     return (
         <div className="justify-center items-center m-auto">
-            <div className="w-78 h-365 bg-white justify-center
-            items-center relative">
+            <div className="w-78 h-335 bg-white justify-center
+            items-center relative left-30">
                 <div>
                     <Profile />
                     <Languages />
