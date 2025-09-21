@@ -13,7 +13,7 @@ function Extraskills() {
             <LTitle title="Extra Skills" />
             {extraSkills}
             <img src="Line 6.png" className="items-center
-                pt-5 m-auto w-full"  />
+                pt-4 m-auto w-full"  />
         </div>
     )
 }

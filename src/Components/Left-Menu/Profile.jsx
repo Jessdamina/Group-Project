@@ -14,12 +14,12 @@ function Profile() {
                     <h1 className="text-xl text-center text-[#242526]
                     drop-shadow-gray-400 drop-shadow-md font-semibold">
                         Rayan Adlardard</h1>
-                    <h3 className="text-[#8c8c8c] text-center pt-3 text-md">
+                    <h3 className="text-[#8c8c8c] text-center pt-2 text-md">
                         Front-End Developer</h3>
             </div>
             <Socials />
             <img src="Line 6.png" className="items-center
-                pt-5 m-auto w-full"  />
+                pt-3 m-auto w-full"  />
             <div className="flex justify-center pt-3">
                 <div className="justify-items-start grid gap-2 pt-5 max-w-fit">
                     <p className="text-[#3A3B3C] text-lg
@@ -39,7 +39,7 @@ function Profile() {
                 </div>
             </div>
             <img src="Line 6.png" className="items-center
-                pt-7 m-auto w-full"  />
+                pt-5 m-auto w-full"  />
         </div>
     )
 }
