@@ -7,8 +7,8 @@ function App() {
   return (
     <>
       <LeftMenu />
-      <Hero />
       <Icons />
+      <Hero />
     </>
   )
 }
