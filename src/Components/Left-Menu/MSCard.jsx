@@ -1,6 +1,6 @@
 export const MSCard = ({ imagesrc, title, description }) => {
     return (
-        <div className="bg-white w-60 h-50 hover:scale-105">
+        <div className="bg-white w-60 h-50 hover:scale-105 cursor-pointer">
             <img src={imagesrc} alt="image" className="className='justify-center
             items-center m-auto object-cover pt-4"/>
             <h1 className="text-[#2B2B2B] text-md font-semibold
