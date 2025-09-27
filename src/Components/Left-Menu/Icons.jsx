@@ -1,8 +1,8 @@
 function Icons () {
     return (
         <div className="justify-center items-center m-auto bg-white
-        w-25 h-335 absolute top-0 right-30">
-            <div className="justify-center items-center m-auto grid pt-10">
+        w-25 h-310 absolute top-0 right-30">
+            <div className="justify-center items-center m-auto grid pt-4">
                 <img src="Contrast.png" alt="Contrast" className="justify-center
                 w-7 h-7 items-center m-auto"/>
                 <div className="grid gap-8">

@@ -6,9 +6,9 @@ export const LTemplate = ({ description, percentage }) => {
             {/* <LTitle title={title} /> */}
             <div className="flex justify-between">
                 <p className="text-[#767676]
-                font-md text-lg">{description}</p>
+                font-md text-md">{description}</p>
                 <p className="text-[#767676]
-                font-md text-lg">{percentage}</p>
+                font-md text-md">{percentage}</p>
             </div>
         </div>
     )
