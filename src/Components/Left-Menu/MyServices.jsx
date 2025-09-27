@@ -1,17 +1,9 @@
 import { Header } from './Header.jsx';
 import { Description } from './Description.jsx';
+import MSCard from './MSCard.jsx';
 import MSData from './MSData.jsx';
 
 function MyServices() {
-    const MyServices = MSData.map(service => (
-        <div key={service.id} className='justify-center items-center m-auto
-        text-center'>
-            <img src={service.src} alt='service-image' className='justify-center
-            items-center m-auto' />
-            <h1 className='text-[#2B2B2B]'>{service.title}</h1>
-            <p className='text-[#767676] text-sm'>{service.description}</p>
-        </div>
-    ));
     return (
         <div className="justify-center items-center m-auto
          relative bottom-280 w-200 h-100 left-26">
@@ -23,9 +15,15 @@ function MyServices() {
                 lorem ipsum"
                 />
             </div>
-            <div className='grid grid-cols-3 justify-center items-center m-auto
-            bg-white grid-rows-subgrid'>
-                {MyServices}
+            <div className='pt-15 grid grid-cols-3 gap-x-3 gap-7'>
+                {MSData.map((service) => (
+                    <MSCard
+                        key={service.id}
+                        title={service.title}
+                        imagesrc={service.src}
+                        description={service.description}
+                    />
+                ))}
             </div>
         </div>
     )
