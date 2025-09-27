@@ -29,11 +29,11 @@ export const MSData = [
         title: "Photography",
         description: "Portrait, Product Photograhy"
     },
-    {
-        id: 6,
-        src: null,
-        title: "Advertising",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi."
-    }
+    // {
+    //     id: 6,
+    //     src: null,
+    //     title: "Advertising",
+    //     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi."
+    // }
 ]
 export default MSData;
