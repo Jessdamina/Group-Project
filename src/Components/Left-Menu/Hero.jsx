@@ -1,7 +1,7 @@
 function Hero() {
     return (
         <div className="justify-center items-center m-auto
-            bg-white absolute top-0 w-200 h-100 left-115">
+            bg-white relative bottom-310 w-200 h-100 left-26">
             <div className="flex h-100 max-w-180
             m-auto gap-10">
                 <div>
