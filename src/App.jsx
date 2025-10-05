@@ -3,6 +3,7 @@ import LeftMenu from './Components/Left-Menu/Left-menu'
 import Icons from './Components/Left-Menu/Icons'
 import Hero from './Components/Left-Menu/Hero'
 import MyServices from './Components/Left-Menu/MyServices'
+import Priceplan from './Components/Left-Menu/Priceplan'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Icons />
       <Hero />
       <MyServices />
+      <Priceplan />
     </>
   )
 }
