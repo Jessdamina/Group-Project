@@ -8,7 +8,7 @@ import GPlayout from './GPlayout.jsx';
 import GData from './GData.jsx';
 import DData from './DData.jsx';
 import DPlayout from './DPlayout.jsx';
-import Button from './button.jsx';
+import Button from './Button.jsx';
 
 function Priceplan () {
     return (
