@@ -2,20 +2,48 @@ import { Header } from './Header.jsx';
 import { Description } from './Description.jsx';
 import MSCard from './MSCard.jsx';
 import MSData from './MSData.jsx';
+import { useState, useEffect } from 'react';
 
 function MyServices() {
+    // Import useState and useEffect for responsive handling
+
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth < 640);
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    // Hide component in mobile view
+    if (isMobile) return null;
+
+    // Hide component in mobile and medium screens
+    const [isHidden, setIsHidden] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => setIsHidden(window.innerWidth < 1024); // 1024px is Tailwind's 'lg'
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    if (isHidden) return null;
+
     return (
-        <div className="justify-center items-center m-auto
-         relative bottom-280 w-200 h-100 left-26">
-            <div>
+        <div className="flex flex-col items-center m-auto h-full w-full max-w-4xl py-7 relative 
+        bottom-290 left-30">
+            <div className="w-full">
                 <Header title="My Services" />
-                <Description 
-                description="Amet minim mollit non deserunt ullamco est sit aliqua 
-                dolor do amet sint. Velit officia consequat duis enim velit mollit. 
-                lorem ipsum"
+                <Description
+                    description="Amet minim mollit non deserunt ullamco est sit aliqua 
+                    dolor do amet sint. Velit officia consequat duis enim velit mollit. 
+                    lorem ipsum"
                 />
             </div>
-            <div className='pt-15 grid grid-cols-3 gap-x-3 gap-5 max-w-200 h-130'>
+            <div className="pt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-15 h-full w-full 
+            max-w-4xl">
                 {MSData.map((service) => (
                     <MSCard
                         key={service.id}
@@ -24,19 +52,6 @@ function MyServices() {
                         description={service.description}
                     />
                 ))}
-            </div>
-            <div className="bg-white w-60 h-50 hover:scale-105 cursor-pointer
-            relative bottom-55 left-135">
-                <h1 className="text-[#2B2B2B] text-md font-semibold
-                text-center pt-4">Advertising</h1>
-                <p className='text-[#767676] text-sm ml-2 mr-2
-                text-center pt-4'>Lorem ipsum dolor sit amet, consectetur
-                 adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. </p>
-                <div className='flex gap-3 justify-center items-center m-auto pt-4'>
-                    <p className='text-[#FFB400] text-xs font-semibold'>
-                    ORDER NOW</p>
-                    <img src="vector.png" alt="vector" className='h-2 w-2 object-cover'/>
-                </div>
             </div>
         </div>
     )

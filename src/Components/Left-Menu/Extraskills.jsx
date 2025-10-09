@@ -5,7 +5,7 @@ function Extraskills() {
     const extraSkills = ESData.map(skill => (
         <div key={skill.id} className="flex gap-3 pt-2 items-center">
             <img src={skill.src} alt="Icons" className="w-4 h-4 object-cover" />
-            <p className="text-[#767676] font-md text-md">{skill.description}</p>
+            <p className="text-[#767676] dark:text-[#E4E6EB] font-md text-md">{skill.description}</p>
         </div>
     ));
     return (
@@ -13,7 +13,7 @@ function Extraskills() {
             <LTitle title="Extra Skills" />
             {extraSkills}
             <img src="Line 6.png" className="items-center
-                pt-4 m-auto w-full"  />
+                pt-4 m-auto w-full dark:blur-2xl"  />
         </div>
     )
 }

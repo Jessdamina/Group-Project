@@ -31,7 +31,7 @@ function Languages() {
                         className="w-full h-2 relative bottom-1.5 rounded-2xl" />
                 </div>
             </div>
-            <img src="Line 6.png" className="items-center
+            <img src="Line 6.png" className="items-center dark:blur-2xl
                 pt-5 m-auto w-full"  />
         </div>
     )
