@@ -1,45 +1,40 @@
 function Hero() {
+    // Hide the hero section on mobile view using Tailwind's 'hidden' and 'md:block'
     return (
-        <div className="justify-center items-center m-auto
-            bg-white relative bottom-310 w-200 h-100 left-26">
-            <div className="flex h-100 max-w-180
-            m-auto gap-10">
-                <div>
-                    <h1 className="text-[#2B2B2B] 
-                    text-4xl font-bold pt-15">I'm Rayan Adlardard</h1>
-                    <h1 className="text-[#2B2B2B] pb-5
-                    text-4xl font-bold"><span className="text-[#FFB400]">
-                        Front-end</span> Developer</h1>
-                    <p className="text-[#767676] pb-10 text-sm max-w-80">
-                       Lorem ipsum dolor sit amet,
-                       consectetur adipiscing elit. Et,
-                       volutpat feugiat placerat lobortis.
-                       Natoque rutrum semper sed suspendisse 
-                       nunc lectus. 
+        <div className="hidden lg:flex justify-center items-center m-auto bg-white relative dark:bg-[#242526] h-full w-full max-w-4xl px-4 py-8 md:py-7 bottom-310 left-30">
+            <div className="flex gap-10 flex-col md:flex-row h-auto md:h-100 max-w-full md:max-w-4xl m-auto md:gap-10">
+                <div className="flex-1">
+                    <h1 className="text-[#2B2B2B] text-2xl md:text-4xl dark:text-[#E4E6EB] font-bold pt-4 md:pt-15">
+                        I'm Rayan Adlrdard
+                    </h1>
+                    <h1 className="text-[#2B2B2B] pb-2 md:pb-5 dark:text-[#E4E6EB] text-2xl md:text-4xl font-bold">
+                        <span className="text-[#FFB400]">Front-end</span> Developer
+                    </h1>
+                    <p className="text-[#767676] dark:text-[#E4E6EB] pb-4 md:pb-10 text-xs md:text-sm max-w-full md:max-w-80">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat feugiat placerat lobortis. Natoque rutrum semper sed suspendisse nunc lectus.
                     </p>
-                    <button className="text-[#2B2B2B] bg-[#FFB400]
-                    flex items-center justify-center gap-2 cursor-pointer
-                    w-32 h-10 rounded-sm font-semibold hover:scale-105">
+                    <button className="text-[#2B2B2B] bg-[#FFB400] flex items-center justify-center gap-2 cursor-pointer w-28 md:w-32 h-9 md:h-10 rounded-sm font-semibold hover:scale-105">
                         HIRE ME
-                        <img src="Vector3.png" alt="Vector3" />
+                        <img src="Vector3.png" alt="Arrow pointing right, decorative accent for Hire Me button" />
                     </button>
-                    <img src="Rectangle 51.png" alt="Rectangle 51"
-                    className="w-4 h-4 object-cover relative left-170 bottom-60"/>
-                    <img src="Ellipse 15.png" alt="Ellipse 15"
-                    className="w-3 h- object-cover relative bottom-78"/>
-                    <img src="Ellipse 15.png" alt="Ellipse 15"
-                    className="w-3 h-3 object-cover relative left-90 top-0"/>
-                    <img src="Ellipse 16.png" alt="Ellipse 16"
-                    className="w-3 h-3 object-cover relative left-5 top-5"/>
-                    <img src="Ellipse 16.png" alt="Ellipse 16"
-                    className="w-3 h-3 object-cover relative left-90 bottom-80"/>
-                    <img src="Rectangle 52.png" alt="Rectangle 52"
-                    className="w-4 h-4 object-cover relative left-60 bottom-30"/>
-                    <img src="Polygon 1.png" alt="Polygon 1"
-                    className="w-3 h-3 object-cover relative left-178 bottom-5"/>
+                    {/* Decorative images, hidden on small screens */}
+                    <div className="hidden md:block">
+                        <img src="Rectangle 51.png" alt="Small yellow rectangle, decorative accent in hero section" className="w-4 h-4 object-cover absolute left-200 top-5"/>
+                        <img src="Ellipse 15.png" alt="Small yellow circle, decorative accent in hero section" className="w-3 h-3 object-cover absolute bottom-30 left-115"/>
+                        <img src="Ellipse 15.png" alt="Small yellow circle, decorative accent in hero section" className="w-3 h-3 object-cover absolute left-20 top-5"/>
+                        <img src="Ellipse 16.png" alt="Small gray circle, decorative accent in hero section" className="w-3 h-3 object-cover absolute left-120 top-15"/>
+                        <img src="Ellipse 16.png" alt="Small gray circle, decorative accent in hero section" className="w-3 h-3 object-cover absolute left-24 bottom-10"/>
+                        <img src="Rectangle 52.png" alt="Small gray rectangle, decorative accent in hero section" className="w-4 h-4 object-cover absolute left-60 bottom-35"/>
+                        <img src="Polygon 1.png" alt="Small yellow triangle, decorative accent in hero section" className="w-3 h-3 object-cover absolute left-200 bottom-10"/>
+                    </div>
                 </div>
-                <img src="image.png" alt="image" className="h-100 
-                object-cover" />
+                <div className="flex-1 flex justify-center items-center">
+                    <img
+                        src="image.png"
+                        alt="Rayan Adlrdard smiling and facing forward, casual pose in a modern workspace. Text in environment: I'm Rayan Adlrdard, Front-end Developer, Hire Me. The mood is friendly and professional."
+                        className="h-full md:h-auto w-auto object-cover"
+                    />
+                </div>
             </div>
         </div>
     )

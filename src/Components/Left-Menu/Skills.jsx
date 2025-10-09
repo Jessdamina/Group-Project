@@ -46,7 +46,7 @@ function Skills() {
                     className="w-full h-2 relative bottom-1.5 rounded-2xl" />
             </div>
             <img src="Line 6.png" className="items-center
-                pt-5 m-auto w-full"  />
+                pt-5 m-auto w-full dark:blur-2xl"  />
         </div>
     )
 }

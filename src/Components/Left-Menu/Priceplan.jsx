@@ -9,39 +9,43 @@ import GData from './GData.jsx';
 import DData from './DData.jsx';
 import DPlayout from './DPlayout.jsx';
 import Button from './Button.jsx';
+import React, { useState, useEffect } from 'react';
 
 function Priceplan () {
-    return (
-        <div className="justify-center items-center m-auto
-         relative bottom-210 w-200 h-100 left-26">
-            <div>
-                <Header title="Price Plan" />
-                <Description description="Amet minim mollit non deserunt ullamco est sit aliqua 
-                dolor do amet sint. Velit officia consequat duis enim velit mollit. 
-                lorem ipsum" />
-            </div>
-            <div className='pt-10 flex gap-10 justify-center items-center m-auto'>
-                <div className='bg-white h-112 w-60 justify-center items-center m-auto'>
-                    <PPtag background="white"/>
-                    <PPlayout
-                    description="Silver"
-                    title="$0.00"/>
+    // Import useState and useEffect for animation and responsiveness
+
+    // Helper to detect mobile view
+    const isMobile = window.innerWidth <= 768;
+
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    // Slide data for plans
+    const plans = [
+        {
+            key: 'silver',
+            content: (
+                <div className='bg-white dark:bg-[#242526] h-112 w-68 pt-6 justify-center 
+                items-center m-0'>
+                    <PPlayout description="Silver" title="$0.00" />
                     {SData.map((service) => (
-                        <SPlayout 
-                        key={service.id}
-                        imagesrc={service.src}
-                        description={service.description}
-                        color={service.color}/>
-                    )) }
+                        <SPlayout
+                            key={service.id}
+                            imagesrc={service.src}
+                            description={service.description}
+                            color={service.color}
+                        />
+                    ))}
                     <Button />
-                </div> 
-                <div className='drop-shadow-lg drop-shadow-gray-300 bg-white h-112'>
-                    <PPtag 
-                    background="#FFB400"
-                    description="Most Popular"/>
-                    <PPlayout
-                    description="Gold" 
-                    title="$50.00"/>
+                </div>
+            ),
+        },
+        {
+            key: 'gold',
+            content: (
+                <div className='drop-shadow-lg drop-shadow-gray-300 bg-white dark:bg-[#242526]
+                 h-112 dark:drop-shadow-[#FFB400]'>
+                    <PPtag background="#FFB400" description="Most Popular" />
+                    <PPlayout description="Gold" title="$50.00" />
                     {GData.map((service) => (
                         <GPlayout
                             key={service.id}
@@ -49,13 +53,16 @@ function Priceplan () {
                             description={service.description}
                             color={service.color}
                         />
-                    )) }
-                    <Button background="#FFB400"/>
+                    ))}
+                    <Button background="#FFB400" color="#242526" />
                 </div>
-                <div className='bg-white pt-6 h-112'>
-                    <PPlayout
-                    description="Diamond"
-                    title="80.00"/>
+            ),
+        },
+        {
+            key: 'diamond',
+            content: (
+                <div className='bg-white w-68 dark:bg-[#242526] pt-6 h-112'>
+                    <PPlayout description="Diamond" title="80.00" />
                     {DData.map((service) => (
                         <DPlayout
                             key={service.id}
@@ -65,8 +72,74 @@ function Priceplan () {
                     ))}
                     <Button />
                 </div>
+            ),
+        },
+    ];
+
+    // Slide animation styles
+    const slideStyle = {
+        transition: 'transform 0.5s cubic-bezier(.68,-0.55,.27,1.55)',
+        transform: isMobile ? `translateX(-${activeIndex * 100}%)` : 'none',
+        display: 'flex',
+        flexDirection: isMobile ? 'row' : 'row',
+        width: isMobile ? `${plans.length * 100}%` : 'auto',
+    };
+
+    // Navigation for mobile
+    const handlePrev = () => setActiveIndex((i) => (i > 0 ? i - 1 : i));
+    const handleNext = () => setActiveIndex((i) => (i < plans.length - 1 ? i + 1 : i));
+
+    return (
+        <div
+            className="
+                flex flex-col justify-center items-center m-auto
+                relative 
+                h-full w-full max-w-4xl py-8
+                md:bottom-2 md:left-8
+                sm:top-5 sm:left-0
+                lg:absolute lg:left-241 lg:top-400 lg:transform lg:-translate-x-1/2
+            "
+        >
+            <div className="w-full max-w-md mx-auto">
+                <Header title="Price Plan" />
+                <Description description="Amet minim mollit non deserunt ullamco est sit aliqua 
+                dolor do amet sint. Velit officia consequat duis enim velit mollit. 
+                lorem ipsum" />
             </div>
+            {isMobile ? (
+                <div className="overflow-hidden relative pt-10 w-full flex justify-center items-center">
+                    <div style={slideStyle}>
+                        {plans.map((plan) => (
+                            <div key={plan.key} style={{ width: '100%' }}>
+                                {plan.content}
+                            </div>
+                        ))}
+                    </div>
+                    <div className="flex justify-between mt-4 w-full max-w-md mx-auto">
+                        <button
+                            onClick={handlePrev}
+                            disabled={activeIndex === 0}
+                            className="px-4 py-2 bg-gray-300 rounded"
+                        >
+                            Prev
+                        </button>
+                        <button
+                            onClick={handleNext}
+                            disabled={activeIndex === plans.length - 1}
+                            className="px-4 py-2 bg-gray-300 rounded"
+                        >
+                            Next
+                        </button>
+                    </div>
+                </div>
+            ) : (
+                <div className='pt-10 flex gap-10 justify-center items-center m-auto w-full'>
+                    {plans.map((plan) => (
+                        <React.Fragment key={plan.key}>{plan.content}</React.Fragment>
+                    ))}
+                </div>
+            )}
         </div>
-    )
+    );
 }
 export default Priceplan;
