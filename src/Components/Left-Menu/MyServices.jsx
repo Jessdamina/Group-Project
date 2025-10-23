@@ -22,7 +22,7 @@ function MyServices() {
     if (isBelowLg) return null;
 
     return (
-        <div className="flex flex-col items-center m-auto h-full w-full max-w-4xl pt-20 relative">
+        <div className="flex flex-col items-center m-auto h-full w-full max-w-4xl pt-20 relative left-30">
             <div className="w-full">
                 <Header title="My Services" />
                 <Description

@@ -19,7 +19,7 @@ function Portfolio() {
     }, []);
 
     return (
-        <div className='max-w-4xl justify-center items-center m-auto'>
+        <div className='max-w-4xl justify-center items-center m-auto relative left-30'>
             <div className='pt-20'>
                 <Header title="Portfolio" />
                 <Description description={
