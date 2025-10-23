@@ -1,7 +1,7 @@
 function Hero() {
     // Hide the hero section on screens smaller than 'lg' using Tailwind's 'hidden' and show as flex on 'lg' and above with 'lg:flex'
     return (
-        <div className="hidden lg:flex justify-center items-center m-auto bg-white relative dark:bg-[#242526] h-full w-full max-w-4xl px-4 py-8 md:py-7">
+        <div className="hidden lg:flex justify-center items-center m-auto bg-white relative left-30 dark:bg-[#242526] h-full w-full max-w-4xl px-4 py-8 md:py-7">
             <div className="flex gap-10 flex-col md:flex-row h-auto md:h-100 max-w-full md:max-w-4xl m-auto md:gap-10">
                 <div className="flex-1">
                     <h1 className="text-[#2B2B2B] text-2xl md:text-4xl dark:text-[#E4E6EB] font-bold pt-4 md:pt-16">

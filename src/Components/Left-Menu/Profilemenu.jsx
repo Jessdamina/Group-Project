@@ -24,7 +24,7 @@ function Profilemenu() {
 
     return (
         <div
-            className={`bg-white dark:bg-[#242526] justify-center items-center absolute top-0 left-5 h-310 w-80
+            className={`bg-white dark:bg-[#242526] justify-center items-center absolute top-0 h-310 w-80
                 ${isMobile ? 'w-full left-0 h-auto' : ''}`}
         >
             <Profile />

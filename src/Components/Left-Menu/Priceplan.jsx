@@ -120,7 +120,7 @@ function Priceplan () {
         <div
             className="
                 flex flex-col justify-center items-center m-auto
-                relative h-full w-full max-w-4xl pt-20"
+                relative h-full w-full max-w-4xl pt-20 left-30"
         >
             <div className="w-full max-w-md mx-auto">
                 <Header title="Price Plan" />

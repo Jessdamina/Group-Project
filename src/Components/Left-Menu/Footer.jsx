@@ -23,7 +23,7 @@ function Footer() {
 
     return (
         <div className="relative">
-            <div className="max-w-4xl justify-center items-center m-auto pt-20 pb-10">
+            <div className="max-w-4xl justify-center items-center m-auto pt-20 pb-10 relative left-30">
                 <img src="./Map.png" className="object-cover" />
                 <div className="pt-10 flex justify-between gap-4">
                     <img src="Frame.png" className="object-cover" />
