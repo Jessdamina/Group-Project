@@ -34,7 +34,7 @@ function Icons () {
             </button>
             {/* Responsive nav content */}
             <div className={`${isNavOpen ? "block" : "hidden"} md:block md:flex-col`} id="Nav">
-                <div className={`m-auto bg-white dark:bg-[#242526] w-25 h-310 absolute top-0 right-10 pt-5`}>
+                <div className={`m-auto bg-white dark:bg-[#242526] w-25 h-310 absolute top-0 right-60 pt-5`}>
                     <img
                         src="Contrast.png"
                         alt="Contrast"

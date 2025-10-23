@@ -7,6 +7,10 @@ import Hero from './Components/Left-Menu/Hero'
 import MyServices from './Components/Left-Menu/MyServices'
 import Priceplan from './Components/Left-Menu/Priceplan'
 import Recommendations from './Components/Left-Menu/Recommendations'
+import Education from './Components/Left-Menu/Education';
+import Portfolio from './Components/Left-Menu/Portfolio';
+import Blog from './Components/Left-Menu/Blog';
+import Footer from './Components/Left-Menu/Footer';
 
 function App() {
   const [isDesktop, setIsDesktop] = useState(true);
@@ -35,13 +39,18 @@ function App() {
   }, []);
 
   return (
-    <div className='bg-[#F0F0F6] dark:bg-[#2B2B2B]'>
-      <Profilemenu />
-      <Icons />
+    <div className='bg-[rgb(240,240,246)] dark:bg-[#2B2B2B]'>
       <Hero />
       <MyServices />
       <Priceplan />
       <Recommendations />
+      <Education />
+      <Portfolio />
+      <Blog />
+      <Footer />
+      <Icons />
+      <Profilemenu />
+
     </div>
   )
 }

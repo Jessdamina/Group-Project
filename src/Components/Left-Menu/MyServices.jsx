@@ -7,33 +7,22 @@ import { useState, useEffect } from 'react';
 function MyServices() {
     // Import useState and useEffect for responsive handling
 
-    const [isMobile, setIsMobile] = useState(false);
-
-    useEffect(() => {
-        const handleResize = () => setIsMobile(window.innerWidth < 640);
-        handleResize();
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
-    // Hide component in mobile view
-    if (isMobile) return null;
+    // Responsive handling: Hide component in mobile and medium screens
 
     // Hide component in mobile and medium screens
-    const [isHidden, setIsHidden] = useState(false);
+    const [isBelowLg, setIsBelowLg] = useState(false);
 
     useEffect(() => {
-        const handleResize = () => setIsHidden(window.innerWidth < 1024); // 1024px is Tailwind's 'lg'
+        const handleResize = () => setIsBelowLg(window.innerWidth < 1024); // 1024px is Tailwind's 'lg'
         handleResize();
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    if (isHidden) return null;
+    if (isBelowLg) return null;
 
     return (
-        <div className="flex flex-col items-center m-auto h-full w-full max-w-4xl py-7 relative 
-        bottom-290 left-30">
+        <div className="flex flex-col items-center m-auto h-full w-full max-w-4xl pt-20 relative">
             <div className="w-full">
                 <Header title="My Services" />
                 <Description
@@ -42,7 +31,7 @@ function MyServices() {
                     lorem ipsum"
                 />
             </div>
-            <div className="pt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-15 h-full w-full 
+            <div className="pt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 h-full w-full 
             max-w-4xl">
                 {MSData.map((service) => (
                     <MSCard
