@@ -5,11 +5,7 @@ import MSData from './MSData.jsx';
 import { useState, useEffect } from 'react';
 
 function MyServices() {
-    // Import useState and useEffect for responsive handling
-
     // Responsive handling: Hide component in mobile and medium screens
-
-    // Hide component in mobile and medium screens
     const [isBelowLg, setIsBelowLg] = useState(false);
 
     useEffect(() => {
@@ -22,7 +18,8 @@ function MyServices() {
     if (isBelowLg) return null;
 
     return (
-        <div className="flex flex-col items-center m-auto h-full w-full max-w-4xl pt-20 relative left-30">
+        // remove left-30 and redundant h-full; add overflow-hidden and horizontal padding to prevent overflow
+        <div className="flex flex-col items-center mx-auto pt-20 w-full max-w-4xl relative overflow-hidden px-4 sm:px-6">
             <div className="w-full">
                 <Header title="My Services" />
                 <Description
@@ -31,8 +28,8 @@ function MyServices() {
                     lorem ipsum"
                 />
             </div>
-            <div className="pt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 h-full w-full 
-            max-w-4xl">
+
+            <div className="pt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 w-full">
                 {MSData.map((service) => (
                     <MSCard
                         key={service.id}
@@ -43,6 +40,6 @@ function MyServices() {
                 ))}
             </div>
         </div>
-    )
+    );
 }
 export default MyServices;

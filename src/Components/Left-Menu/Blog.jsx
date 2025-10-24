@@ -6,7 +6,7 @@ function Blog() {
     const isMobile = typeof window !== 'undefined' && window.innerWidth <= 640;
 
     return (
-        <div className={'relative left-30 max-w-4xl justify-center items-center m-auto pt-15 ' + (isMobile ? 'px-4' : '')}>
+        <div className={'relative w-full max-w-4xl mx-auto justify-center items-center pt-15 overflow-x-hidden ' + (isMobile ? 'px-4' : 'px-0')}>
             <div className={isMobile ? 'text-center' : ''}>
                 <Header title="Blog" />
                 <Description description="Amet minim mollit non deserunt ullamco est
