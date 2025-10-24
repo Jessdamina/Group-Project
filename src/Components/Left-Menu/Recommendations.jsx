@@ -10,7 +10,7 @@ function Recommendations () {
 
     return (
         <div className={`
-                flex flex-col justify-center items-center m-auto pb-10
+                flex flex-col justify-center items-center m-auto pb-10 left-35
                 relative ${isMobile ? 'pt-6' : 'pt-25'}
                 ${isMobile ? 'h-auto' : 'h-115'} w-full max-w-4xl`}>
             <div>

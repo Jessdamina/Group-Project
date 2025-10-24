@@ -50,7 +50,7 @@ function Profilemenu() {
                                 aria-hidden="true"
                             />
                             <div
-                                className="m-4 mt-6 w-80 max-w-full bg-white dark:bg-[#242526] rounded-md shadow-lg overflow-auto"
+                                className="m-4 mt-6 w-70 max-w-full bg-white dark:bg-[#242526] rounded-md shadow-lg overflow-auto"
                                 onClick={(e) => e.stopPropagation()}
                             >
                                 <Profile />
