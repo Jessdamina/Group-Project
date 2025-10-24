@@ -19,7 +19,7 @@ function MyServices() {
 
     return (
         // remove left-30 and redundant h-full; add overflow-hidden and horizontal padding to prevent overflow
-        <div className="flex flex-col items-center mx-auto pt-20 w-full max-w-4xl relative overflow-hidden px-4 sm:px-6">
+        <div className="flex flex-col items-center mx-auto pt-20 w-full max-w-4xl relative left-35 overflow-hidden px-4 sm:px-6">
             <div className="w-full">
                 <Header title="My Services" />
                 <Description

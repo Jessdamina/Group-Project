@@ -1,7 +1,7 @@
 function Hero() {
     // Hide the hero section on screens smaller than 'lg'
     return (
-        <div className="hidden lg:flex overflow-hidden flex-shrink-0 justify-center items-center m-auto bg-white dark:bg-[#242526] h-full max-w-4xl md:py-7">
+        <div className="hidden relative left-35 lg:flex overflow-hidden flex-shrink-0 justify-center items-center m-auto bg-white dark:bg-[#242526] h-full max-w-4xl md:py-7">
             <div className="flex gap-10 flex-col md:flex-row h-auto md:h-100 max-w-full md:max-w-4xl m-auto md:gap-10">
                 <div className="flex-1">
                     <h1 className="text-[#2B2B2B] text-2xl md:text-4xl dark:text-[#E4E6EB] font-bold pt-4 md:pt-16">
